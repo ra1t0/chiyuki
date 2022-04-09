@@ -12,7 +12,7 @@ jobs:
         - name: Setup .NET Core
           uses: actions/setup-dotnet@v1
           with:
-            dotnet-version: 6.0
+            dotnet-version: 6.x
 
         # Run tests Testプロジェクトがない場合はコメントアウトが必要
         #- name: Test
@@ -29,7 +29,7 @@ jobs:
           with:
             github_token: ${{ secrets.token }} #Secretに登録したTokenを設定
             publish_branch: gh-pages
-            publish_dir: bin/Release/net6.0/wwwroot/_framework
+            publish_dir: docs/
             allow_empty_commit: false
             keep_files: false
             force_orphan: true
